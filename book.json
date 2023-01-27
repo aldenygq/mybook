@@ -1,0 +1,120 @@
+{
+    "title": "码农小杨",
+    "author": "Alden",
+    "description": "记录学习、工作期间学习到的知识，见证自己的成长😄",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "structure": {
+        "readme": "README.md"
+    },
+    "links" : {
+        "sidebar" : {
+            "Home" : "http://49.232.52.190:1313/about/"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins": [ 
+        "expandable-chapters",
+	"back-to-top-button",
+	"page-treeview", 
+	"fontsettings",
+	"klipse",
+	"-lunr",
+	"-sharing",
+	"-search",
+	"search-pro",
+	"favicon",
+	"-highlight",
+	"livereload",
+	"pageview-count",
+	"code",
+	"auto-scroll-table",
+	"anchors",
+	"hide-element",
+	"advanced-emoji",
+	"tbfed-pagefooter",
+	"github",
+        "github-buttons",
+	"emphasize",
+	"splitter",
+	"-sharing",
+	"sharing-plus",
+	"sectionx",
+	"simple-page-toc",
+	"alerts",
+	"click-reveal",
+	"accordion"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/aldenygq"
+        },
+	"page-treeview": {
+       	 	"copyright": "Copyright &#169; aleen42",
+       		"minHeaderCount": "2",
+            "minHeaderDeep": "2"
+    	},
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+	"anchor-navigation-ex": {
+            "isShowTocTitleIcon": true
+        },
+        "theme-default": {
+            "showLevel": true
+        },
+        "code": {
+            "copyButtons": true
+        },
+	"tbfed-pagefooter": {
+            "copyright": "Copyright © zhaojq 2019",
+            "modify_label": "本书发布时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "github-buttons": {
+            "buttons": [{
+                "user": "aldenygq",
+                "repo": "leetcode",
+                "type": "star",
+                "size": "small",
+                "count": true
+                }
+            ]
+        },
+        "favicon":{
+            "shortcut": "",
+            "bookmark": ""
+        }
+
+   },
+   "sharing": {
+            "douban": true,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "weibo","qq", "qzone", "douban", "facebook","google",
+							  "linkedin","twitter","whatsapp"
+            ]
+        }
+}

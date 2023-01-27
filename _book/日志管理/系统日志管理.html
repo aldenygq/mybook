@@ -1,0 +1,2097 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>rsyslog · 码农小杨</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Alden">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="日志切割.html" />
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"aldenygq","repo":"leetcode","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://49.232.52.190:1313/about/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    关于我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    操作系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Linux系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    基础理论
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.1.1.</b>
+                    
+                    磁盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="../操作系统/Linux系统/基础理论/磁盘/零拷贝技术.html">
+            
+                <a href="../操作系统/Linux系统/基础理论/磁盘/零拷贝技术.html">
+            
+                    
+                        <b>1.2.1.1.1.1.</b>
+                    
+                    零拷贝技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    基础服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../操作系统/Linux系统/基础服务/Systemd.html">
+            
+                <a href="../操作系统/Linux系统/基础服务/Systemd.html">
+            
+                    
+                        <b>1.2.1.2.1.</b>
+                    
+                    Systemd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    常用命令
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../操作系统/Linux系统/常用命令/ls.html">
+            
+                <a href="../操作系统/Linux系统/常用命令/ls.html">
+            
+                    
+                        <b>1.2.1.3.1.</b>
+                    
+                    ls-列出文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../操作系统/Linux系统/常用命令/ack.html">
+            
+                <a href="../操作系统/Linux系统/常用命令/ack.html">
+            
+                    
+                        <b>1.2.1.3.2.</b>
+                    
+                    ack-全文检索
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    系统调优
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Kafka详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Broker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    安装部署
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="../Kafka详解/Broker/安装部署/基础环境.html">
+            
+                <a href="../Kafka详解/Broker/安装部署/基础环境.html">
+            
+                    
+                        <b>1.3.1.1.1.</b>
+                    
+                    基础环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2" data-path="../Kafka详解/Broker/安装部署/单机.html">
+            
+                <a href="../Kafka详解/Broker/安装部署/单机.html">
+            
+                    
+                        <b>1.3.1.1.2.</b>
+                    
+                    单机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.3" data-path="../Kafka详解/Broker/安装部署/集群.html">
+            
+                <a href="../Kafka详解/Broker/安装部署/集群.html">
+            
+                    
+                        <b>1.3.1.1.3.</b>
+                    
+                    集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../Kafka详解/Broker/配置.html">
+            
+                <a href="../Kafka详解/Broker/配置.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="../Kafka详解/Broker/配置/基础参数.html">
+            
+                <a href="../Kafka详解/Broker/配置/基础参数.html">
+            
+                    
+                        <b>1.3.1.2.1.</b>
+                    
+                    基础参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="../Kafka详解/Broker/配置/性能调优.html">
+            
+                <a href="../Kafka详解/Broker/配置/性能调优.html">
+            
+                    
+                        <b>1.3.1.2.2.</b>
+                    
+                    性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Nginx详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Nginx详解/基础理论.html">
+            
+                <a href="../Nginx详解/基础理论.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    基础理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Nginx详解/安装部署.html">
+            
+                <a href="../Nginx详解/安装部署.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../Nginx详解/安装部署/基础环境.html">
+            
+                <a href="../Nginx详解/安装部署/基础环境.html">
+            
+                    
+                        <b>1.4.2.1.</b>
+                    
+                    基础环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../Nginx详解/安装部署/集群部署.html">
+            
+                <a href="../Nginx详解/安装部署/集群部署.html">
+            
+                    
+                        <b>1.4.2.2.</b>
+                    
+                    集群部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Nginx详解/配置.html">
+            
+                <a href="../Nginx详解/配置.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../Nginx详解/配置/基础参数.html">
+            
+                <a href="../Nginx详解/配置/基础参数.html">
+            
+                    
+                        <b>1.4.3.1.</b>
+                    
+                    基础参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../Nginx详解/配置/性能调优.html">
+            
+                <a href="../Nginx详解/配置/性能调优.html">
+            
+                    
+                        <b>1.4.3.2.</b>
+                    
+                    性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Golang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Golang/基础理论.html">
+            
+                <a href="../Golang/基础理论.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    基础理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Golang/环境配置.html">
+            
+                <a href="../Golang/环境配置.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    环境配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Golang/基础语法.html">
+            
+                <a href="../Golang/基础语法.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Golang/通用框架.html">
+            
+                <a href="../Golang/通用框架.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    通用框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../Golang/Gin.html">
+            
+                <a href="../Golang/Gin.html">
+            
+                    
+                        <b>1.5.4.1.</b>
+                    
+                    Gin-web框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../Golang/Cobra.html">
+            
+                <a href="../Golang/Cobra.html">
+            
+                    
+                        <b>1.5.4.2.</b>
+                    
+                    Cobra-CLI框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Gitbook/安装部署.html">
+            
+                <a href="../Gitbook/安装部署.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Gitbook/插件配置.html">
+            
+                <a href="../Gitbook/插件配置.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    插件配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Cloud Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Cloud Native/组件.html">
+            
+                <a href="../Cloud Native/组件.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../Cloud Native/组件/Docker.html">
+            
+                <a href="../Cloud Native/组件/Docker.html">
+            
+                    
+                        <b>1.7.1.1.</b>
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../Cloud Native/组件/Kubernetes.html">
+            
+                <a href="../Cloud Native/组件/Kubernetes.html">
+            
+                    
+                        <b>1.7.1.2.</b>
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Cloud Native/DevOps.html">
+            
+                <a href="../Cloud Native/DevOps.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../Cloud Native/DevOps/Git.html">
+            
+                <a href="../Cloud Native/DevOps/Git.html">
+            
+                    
+                        <b>1.7.2.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../Cloud Native/DevOps/GitLab.html">
+            
+                <a href="../Cloud Native/DevOps/GitLab.html">
+            
+                    
+                        <b>1.7.2.2.</b>
+                    
+                    GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../Cloud Native/DevOps/Tekton.html">
+            
+                <a href="../Cloud Native/DevOps/Tekton.html">
+            
+                    
+                        <b>1.7.2.3.</b>
+                    
+                    Tekton
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../Cloud Native/DevOps/Argo.html">
+            
+                <a href="../Cloud Native/DevOps/Argo.html">
+            
+                    
+                        <b>1.7.2.4.</b>
+                    
+                    Argo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="../Cloud Native/DevOps/技术方案.html">
+            
+                <a href="../Cloud Native/DevOps/技术方案.html">
+            
+                    
+                        <b>1.7.2.5.</b>
+                    
+                    技术方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    SRE
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../SRE/稳定性.html">
+            
+                <a href="../SRE/稳定性.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    稳定性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../SRE/稳定性/监控体系.html">
+            
+                <a href="../SRE/稳定性/监控体系.html">
+            
+                    
+                        <b>1.8.1.1.</b>
+                    
+                    监控体系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1.1" data-path="../SRE/稳定性/监控体系/监控系统.html">
+            
+                <a href="../SRE/稳定性/监控体系/监控系统.html">
+            
+                    
+                        <b>1.8.1.1.1.</b>
+                    
+                    监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.1.2" data-path="../SRE/稳定性/监控体系/可观测性.html">
+            
+                <a href="../SRE/稳定性/监控体系/可观测性.html">
+            
+                    
+                        <b>1.8.1.1.2.</b>
+                    
+                    可观测性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.1.3" data-path="../SRE/稳定性/监控体系/链路追踪.html">
+            
+                <a href="../SRE/稳定性/监控体系/链路追踪.html">
+            
+                    
+                        <b>1.8.1.1.3.</b>
+                    
+                    链路追踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../SRE/稳定性/故障管理.html">
+            
+                <a href="../SRE/稳定性/故障管理.html">
+            
+                    
+                        <b>1.8.1.2.</b>
+                    
+                    故障管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.2.1" data-path="../SRE/稳定性/故障管理/预案管理.html">
+            
+                <a href="../SRE/稳定性/故障管理/预案管理.html">
+            
+                    
+                        <b>1.8.1.2.1.</b>
+                    
+                    预案管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2.2" data-path="../SRE/稳定性/故障管理/故障注入.html">
+            
+                <a href="../SRE/稳定性/故障管理/故障注入.html">
+            
+                    
+                        <b>1.8.1.2.2.</b>
+                    
+                    故障注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2.3" data-path="../SRE/稳定性/故障管理/故障记录.html">
+            
+                <a href="../SRE/稳定性/故障管理/故障记录.html">
+            
+                    
+                        <b>1.8.1.2.3.</b>
+                    
+                    故障记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../SRE/稳定性/容量管理.html">
+            
+                <a href="../SRE/稳定性/容量管理.html">
+            
+                    
+                        <b>1.8.1.3.</b>
+                    
+                    容量管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.3.1" data-path="../SRE/稳定性/容量管理/容量预估.html">
+            
+                <a href="../SRE/稳定性/容量管理/容量预估.html">
+            
+                    
+                        <b>1.8.1.3.1.</b>
+                    
+                    容量预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3.2" data-path="../SRE/稳定性/容量管理/资源分配.html">
+            
+                <a href="../SRE/稳定性/容量管理/资源分配.html">
+            
+                    
+                        <b>1.8.1.3.2.</b>
+                    
+                    资源分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="../SRE/稳定性/变更管理.html">
+            
+                <a href="../SRE/稳定性/变更管理.html">
+            
+                    
+                        <b>1.8.1.4.</b>
+                    
+                    变更管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.4.1" data-path="../SRE/稳定性/变更管理/发布管理.html">
+            
+                <a href="../SRE/稳定性/变更管理/发布管理.html">
+            
+                    
+                        <b>1.8.1.4.1.</b>
+                    
+                    发布管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.2" data-path="../SRE/稳定性/变更管理/扩缩容.html">
+            
+                <a href="../SRE/稳定性/变更管理/扩缩容.html">
+            
+                    
+                        <b>1.8.1.4.2.</b>
+                    
+                    扩缩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.3" data-path="../SRE/稳定性/变更管理/迁移.html">
+            
+                <a href="../SRE/稳定性/变更管理/迁移.html">
+            
+                    
+                        <b>1.8.1.4.3.</b>
+                    
+                    迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.4" data-path="../SRE/稳定性/巡检系统.html">
+            
+                <a href="../SRE/稳定性/巡检系统.html">
+            
+                    
+                        <b>1.8.1.4.4.</b>
+                    
+                    巡检系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../SRE/效率工程.html">
+            
+                <a href="../SRE/效率工程.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    效率工程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../SRE/效率工程/流程引擎.html">
+            
+                <a href="../SRE/效率工程/流程引擎.html">
+            
+                    
+                        <b>1.8.2.1.</b>
+                    
+                    流程引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../SRE/效率工程/工单系统.html">
+            
+                <a href="../SRE/效率工程/工单系统.html">
+            
+                    
+                        <b>1.8.2.2.</b>
+                    
+                    工单系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../SRE/资源成本.html">
+            
+                <a href="../SRE/资源成本.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    资源成本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../SRE/资源成本/预算管理.html">
+            
+                <a href="../SRE/资源成本/预算管理.html">
+            
+                    
+                        <b>1.8.3.1.</b>
+                    
+                    预算管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../SRE/资源成本/成本管理.html">
+            
+                <a href="../SRE/资源成本/成本管理.html">
+            
+                    
+                        <b>1.8.3.2.</b>
+                    
+                    成本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../SRE/资源成本/服务管理.html">
+            
+                <a href="../SRE/资源成本/服务管理.html">
+            
+                    
+                        <b>1.8.3.3.</b>
+                    
+                    服务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../SRE/资源成本/CMDB.html">
+            
+                <a href="../SRE/资源成本/CMDB.html">
+            
+                    
+                        <b>1.8.3.4.</b>
+                    
+                    CMDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../数据库/Mysql.html">
+            
+                <a href="../数据库/Mysql.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../数据库/Redis.html">
+            
+                <a href="../数据库/Redis.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../数据库/MongoDB.html">
+            
+                <a href="../数据库/MongoDB.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../数据库/ES.html">
+            
+                <a href="../数据库/ES.html">
+            
+                    
+                        <b>1.9.4.</b>
+                    
+                    ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../数据库/OceanBase.html">
+            
+                <a href="../数据库/OceanBase.html">
+            
+                    
+                        <b>1.9.5.</b>
+                    
+                    OceanBase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../数据库/TiDB.html">
+            
+                <a href="../数据库/TiDB.html">
+            
+                    
+                        <b>1.9.6.</b>
+                    
+                    TiDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                        <b>1.10.</b>
+                    
+                    日志管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.10.1" data-path="系统日志管理.html">
+            
+                <a href="系统日志管理.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    rsyslog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="日志切割.html">
+            
+                <a href="日志切割.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    logrotate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="日志采集分析工具.html">
+            
+                <a href="日志采集分析工具.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    ELK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="ELK/FileBeat.html">
+            
+                <a href="ELK/FileBeat.html">
+            
+                    
+                        <b>1.10.3.1.</b>
+                    
+                    FileBeat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >rsyslog</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x529F;&#x80FD;">&#x529F;&#x80FD;</a><i></i></div></li>
+<li><div><a href="#&#x7279;&#x6027;">&#x7279;&#x6027;</a><i></i></div></li>
+<li><div><a href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;">&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x8BE6;&#x89E3;">&#x914D;&#x7F6E;&#x8BE6;&#x89E3;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#etcrsyslogconf&#x7ED3;&#x6784;">/etc/rsyslog.conf&#x7ED3;&#x6784;</a><i></i></div></li>
+<li><div><a href="#&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;">&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</a><i></i></div></li>
+<li><div><a href="#&#x65E5;&#x5FD7;&#x7C7B;&#x578B;">&#x65E5;&#x5FD7;&#x7C7B;&#x578B;</a><i></i></div></li>
+<li><div><a href="#&#x65E5;&#x5FD7;&#x7EA7;&#x522B;">&#x65E5;&#x5FD7;&#x7EA7;&#x522B;</a><i></i></div></li>
+<li><div><a href="#&#x8FDE;&#x63A5;&#x7B26;&#x53F7;">&#x8FDE;&#x63A5;&#x7B26;&#x53F7;</a><i></i></div></li>
+<li><div><a href="#&#x52A8;&#x4F5C;">&#x52A8;&#x4F5C;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;">&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x73AF;&#x5883;">&#x73AF;&#x5883;</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</a><i></i></div></li>
+<li><div><a href="#&#x9A8C;&#x8BC1;">&#x9A8C;&#x8BC1;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;:<a href="https://blog.51cto.com/u_13236892/5637226" target="_blank">&#x53C2;&#x8003;&#x6587;&#x6863;</a></p>
+<h1 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h1>
+<p>rsyslog&#x662F;linux&#x7CFB;&#x7EDF;&#x4E2D;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x7684;&#x670D;&#x52A1;&#x3002;&#x9ED8;&#x8BA4;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x5E76;&#x4E14;&#x81EA;&#x52A8;&#x542F;&#x7528;&#x3002;</p>
+<pre><code>$  systemctl status rsyslog
+&#x25CF; rsyslog.service - System Logging Service
+   Loaded: loaded (/usr/lib/systemd/system/rsyslog.service; enabled; vendor preset: enabled)
+   Active: active (running) since &#x4E94; 2022-12-23 22:09:49 CST; 22h ago
+     Docs: man:rsyslogd(8)
+           http://www.rsyslog.com/doc/
+ Main PID: 11528 (rsyslogd)
+   CGroup: /system.slice/rsyslog.service
+           &#x2514;&#x2500;11528 /usr/sbin/rsyslogd -n
+
+12&#x6708; 23 22:09:49 op-admin01 systemd[1]: Stopped System Logging Service.
+12&#x6708; 23 22:09:49 op-admin01 systemd[1]: Starting System Logging Service...
+12&#x6708; 23 22:09:49 op-admin01 rsyslogd[11528]:  [origin software=&quot;rsyslogd&quot; swVersi...t
+12&#x6708; 23 22:09:49 op-admin01 systemd[1]: Started System Logging Service.
+12&#x6708; 24 05:38:34 op-admin01 rsyslogd[11528]: imjournal: journal reloaded... [v8.2...]
+12&#x6708; 24 06:14:36 op-admin01 rsyslogd[11528]: Framing Error in received TCP messag...]
+12&#x6708; 24 06:14:36 op-admin01 rsyslogd[11528]: Framing Error in received TCP messag...]
+12&#x6708; 24 06:14:37 op-admin01 rsyslogd[11528]: Framing Error in received TCP messag...]
+12&#x6708; 24 06:14:37 op-admin01 rsyslogd[11528]: Framing Error in received TCP messag...]
+Hint: Some lines were ellipsized, use -l to show in full.
+</code></pre><h2 id="&#x529F;&#x80FD;"><a name="&#x529F;&#x80FD;" class="plugin-anchor" href="#&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x529F;&#x80FD;</h2>
+<p>&#x4E3B;&#x8981;&#x7528;&#x6765;&#x91C7;&#x96C6;&#x65E5;&#x5FD7;&#xFF0C;&#x4E0D;&#x751F;&#x4EA7;&#x65E5;&#x5FD7;&#x3002;</p>
+<h2 id="&#x7279;&#x6027;"><a name="&#x7279;&#x6027;" class="plugin-anchor" href="#&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x6027;</h2>
+<ul>
+<li>&#x76F4;&#x63A5;&#x5C06;&#x65E5;&#x5FD7;&#x5199;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
+<li>&#x65E5;&#x5FD7;&#x961F;&#x5217;&#xFF08;&#x5185;&#x5B58;&#x961F;&#x5217;&#x548C;&#x78C1;&#x76D8;&#x961F;&#x5217;&#xFF09;&#x3002;</li>
+<li>&#x7075;&#x6D3B;&#x7684;&#x6A21;&#x677F;&#x673A;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x591A;&#x79CD;&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x3002;</li>
+<li>&#x63D2;&#x4EF6;&#x5F0F;&#x7ED3;&#x6784;&#xFF0C;&#x591A;&#x79CD;&#x591A;&#x6837;&#x7684;&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x6A21;&#x5757;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x628A;&#x65E5;&#x5FD7;&#x5B58;&#x653E;&#x5728;Mysql &#xFF0C;PostgreSQL&#xFF0C;Oracle&#x7B49;&#x6570;&#x636E;&#x5E93;&#x4E2D;</li>
+</ul>
+<h2 id="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;"><a name="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5B9E;&#x73B0;</h2>
+<p>rsyslog&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x4ECE;&#x5BA2;&#x6237;&#x7AEF;&#x8282;&#x70B9;&#x5230;&#x5355;&#x4E2A;&#x4E2D;&#x592E;&#x670D;&#x52A1;&#x5668;&#x7684;&#x201C;&#x96C6;&#x4E2D;&#x65E5;&#x5FD7;&#x201D;&#x7684;&#x7B80;&#x5355;&#x6709;&#x6548;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x65E5;&#x5FD7;&#x96C6;&#x4E2D;&#x5316;&#x6709;&#x4E24;&#x4E2A;&#x597D;&#x5904;&#xFF1A;</p>
+<ul>
+<li>&#x7B80;&#x5316;&#x4E86;&#x65E5;&#x5FD7;&#x67E5;&#x770B;&#xFF0C;&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x4E2D;&#x5FC3;&#x8282;&#x70B9;&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x767B;&#x5F55;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x7CFB;&#x7EDF;&#x6765;&#x68C0;&#x67E5;&#x65E5;&#x5FD7;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x76D1;&#x89C6;&#x591A;&#x53F0;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8FD9;&#x5C06;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x8FDC;&#x7A0B;&#x5BA2;&#x6237;&#x7AEF;&#x5D29;&#x6E83;&#xFF0C;&#x4F60;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x4E22;&#x5931;&#x65E5;&#x5FD7;&#xFF0C;&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#x90FD;&#x5C06;&#x4FDD;&#x5B58;&#x5728;&#x4E2D;&#x5FC3;&#x7684; Rsyslog &#x670D;&#x52A1;&#x5668;&#x4E0A;&#x3002;</li>
+</ul>
+<p>rsyslog &#x53D6;&#x4EE3;&#x4E86;&#x4EC5;&#x652F;&#x6301; UDP &#x534F;&#x8BAE;&#x7684; syslog&#x3002;&#x5B83;&#x4EE5;&#x4F18;&#x5F02;&#x7684;&#x529F;&#x80FD;&#x6269;&#x5C55;&#x4E86;&#x57FA;&#x672C;&#x7684; syslog &#x534F;&#x8BAE;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x4F20;&#x8F93;&#x65E5;&#x5FD7;&#x65F6;&#x652F;&#x6301; UDP &#x548C; TCP &#x534F;&#x8BAE;&#xFF0C;&#x589E;&#x5F3A;&#x7684;&#x8FC7;&#x6EE4;&#x529F;&#x80FD;&#x4EE5;&#x53CA;&#x7075;&#x6D3B;&#x7684;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x3002;</p>
+<h1 id="&#x914D;&#x7F6E;&#x8BE6;&#x89E3;"><a name="&#x914D;&#x7F6E;&#x8BE6;&#x89E3;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x8BE6;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x8BE6;&#x89E3;</h1>
+<h2 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
+<p>/etc/rsyslog.conf</p>
+<h3 id="etcrsyslogconf&#x7ED3;&#x6784;"><a name="etcrsyslogconf&#x7ED3;&#x6784;" class="plugin-anchor" href="#etcrsyslogconf&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>/etc/rsyslog.conf&#x7ED3;&#x6784;</h3>
+<ul>
+<li>&#x5168;&#x5C40;&#x547D;&#x4EE4;&#xFF08;Global dirctives&#xFF09;:&#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x53C2;&#x6570;&#x3001;&#x5982;&#x4E3B;&#x6D88;&#x606F;&#x5C3A;&#x5BF8;&#x3001;&#x52A0;&#x8F7D;&#x6269;&#x5C55;&#x6A21;&#x5757;&#x7B49;</li>
+<li>&#x6A21;&#x7248;&#xFF08;Templates&#xFF09;:&#x6307;&#x5B9A;&#x8BB0;&#x5F55;&#x7684;&#x6D88;&#x606F;&#x683C;&#x5F0F;&#xFF0C;&#x4E5F;&#x7528;&#x4E8E;&#x52A8;&#x6001;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x751F;&#x6210;</li>
+<li>&#x8F93;&#x51FA;&#x901A;&#x9053;&#xFF08;Output chananels):&#x5BF9;&#x7528;&#x6237;&#x671F;&#x671B;&#x7684;&#x6D88;&#x606F;&#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x9884;&#x5B9A;&#x4E49;&#x3002;</li>
+<li>&#x89C4;&#x5219;&#xFF08;Rules&#xFF09;&#x3010;selector +action&#x3011;:&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x89C4;&#x5219;&#x3002;&#x5728;&#x89C4;&#x5219;&#x4E2D;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x4E4B;&#x524D;&#x7684;&#x5B9A;&#x4E49;&#x6A21;&#x7248;&#x548C;&#x8F93;&#x51FA;&#x901A;&#x9053;</li>
+</ul>
+<h3 id="&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;"><a name="&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</h3>
+<pre><code>#### MODULES ####
+$ModLoad imuxsock #   &#x63D0;&#x4F9B;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;&#x652F;&#x6301;&#xFF08;&#x5982;&#x901A;&#x8FC7;logger&#x547D;&#x4EE4;&#xFF09;
+$ModLoad imjournal # &#x63D0;&#x4F9B;&#x5BF9;systemd journal&#x7684;&#x8BBF;&#x95EE;
+#$ModLoad imklog # &#x63D0;&#x4F9B;&#x5185;&#x6838;&#x65E5;&#x5FD7;&#x652F;&#x6301;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;systemed&#x7684;systemd-journald.service&#xFF09;
+#$ModLoad immark  # &#x63D0;&#x4F9B;-MARK-&#x6D88;&#x606F;&#x529F;&#x80FD;
+#### GLOBAL DIRECTIVES ####
+# Use default timestamp format &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x683C;&#x5F0F;
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+# Include all config files in /etc/rsyslog.d/  &#x5305;&#x542B;/etc/rsyslog.d/&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+$IncludeConfig /etc/rsyslog.d/*.conf
+#### RULES ####
+# Log all kernel messages to the console.        &#x5C06;&#x6240;&#x6709;&#x7684;&#x5185;&#x6838;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x5230;&#x63A7;&#x5236;&#x53F0;
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher. &#x5C06;info&#x6216;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x6D88;&#x606F;&#x9001;&#x5230;/var/log/messages&#xFF0C;&#x9664;&#x4E86;/mail/news/authpriv/cron&#x4E4B;&#x5916;   
+# Don&apos;t log private authentication messages!     &#x5176;&#x4E2D;*&#x662F;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x4EE3;&#x8868;&#x4EFB;&#x4F55;&#x8BBE;&#x5907;&#xFF1A;none&#x8868;&#x793A;&#x4E0D;&#x5BF9;&#x4EFB;&#x4F55;&#x7EA7;&#x522B;&#x7684;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+# The authpriv file has restricted access.                &#x5C06;authpirv&#x8BBE;&#x5907;&#x7684;&#x4EFB;&#x4F55;&#x7EA7;&#x522B;&#x7684;&#x4FE1;&#x606F;&#x8BB0;&#x5F55;&#x5230;/var/log/secure&#x4E2D;
+authpriv.*                                              /var/log/secure
+# Log all the mail messages in one place.                    &#x5C06;mail&#x8BBE;&#x5907;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7EA7;&#x522B;&#x4FE1;&#x606F;&#x8BB0;&#x5F55;&#x5230;/var/log/mailog&#x6587;&#x4EF6;&#x4E2D;
+mail.*                                                  -/var/log/maillog
+# Log cron stuff                                             &#x5C06;cron&#x8BBE;&#x5907;&#x7684;&#x4EFB;&#x4F55;&#x7EA7;&#x522B;&#x7684;&#x4FE1;&#x606F;&#x8BB0;&#x5F55;&#x5230;/var/log/cron&#x6587;&#x4EF6;&#x4E2D;
+cron.*                                                  /var/log/cron
+# Everybody gets emergency messages                   &#x5C06;&#x4EFB;&#x4F55;&#x8BBE;&#x5907;&#x7684;emerg&#x7EA7;&#x522B;&#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7684;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x6240;&#x6709;&#x6B63;&#x5728;&#x7CFB;&#x7EDF;&#x4E0A;&#x7528;&#x6237;
+*.emerg                                                 :omusrmsg:*
+# Save news errors of level crit and higher in a special file. &#x5C06;uucp&#x548C;news&#x8BBE;&#x5907;&#x7684;crint&#x7EA7;&#x522B;&#x6216;&#x8005;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x6D88;&#x606F;&#x8BB0;&#x5F55;&#x5230;/var/log/spooler&#x6587;&#x4EF6;&#x4E2D;
+uucp,news.crit                                          /var/log/spooler
+# Save boot messages also to boot.log  &#x5C06;&#x548C;&#x672C;&#x5730;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#x8BB0;&#x5F55;&#x5230;/var/log/boot.log&#x6587;&#x4EF6;&#x4E2D;
+local7.*                                                /var/log/boot.log
+</code></pre><h3 id="&#x65E5;&#x5FD7;&#x7C7B;&#x578B;"><a name="&#x65E5;&#x5FD7;&#x7C7B;&#x578B;" class="plugin-anchor" href="#&#x65E5;&#x5FD7;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x7C7B;&#x578B;</h3>
+<pre><code>&#x65E5;&#x5FD7;&#x7C7B;&#x578B;      &#x65E5;&#x5FD7;&#x5185;&#x5BB9;
+auth          &#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x65F6;&#x4EA7;&#x751F;&#x7684;&#x65E5;&#x5FD7;
+authpriv      ssh&#x3001;ftp&#x7B49;&#x767B;&#x5F55;&#x4FE1;&#x606F;&#x7684;&#x9A8C;&#x8BC1;&#x4FE1;&#x606F;
+daemon        &#x4E00;&#x4E9B;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#x4EA7;&#x751F;&#x7684;&#x65E5;&#x5FD7;
+ftp           FTP&#x4EA7;&#x751F;&#x7684;&#x65E5;&#x5FD7;
+lpr           &#x6253;&#x5370;&#x76F8;&#x5173;&#x6D3B;&#x52A8;
+mark          &#x670D;&#x52A1;&#x5185;&#x90E8;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x65F6;&#x95F4;&#x6807;&#x8BC6;
+news          &#x7F51;&#x7EDC;&#x65B0;&#x95FB;&#x4F20;&#x8F93;&#x534F;&#x8BAE;(nntp)&#x4EA7;&#x751F;&#x7684;&#x6D88;&#x606F;&#x3002;
+syslog        &#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;
+security  
+uucp          Unix-to-Unix Copy &#x4E24;&#x4E2A;unix&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x5173;&#x901A;&#x4FE1;
+console       &#x9488;&#x5BF9;&#x7CFB;&#x7EDF;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x6D88;&#x606F;&#x3002;
+cron          &#x7CFB;&#x7EDF;&#x6267;&#x884C;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4EA7;&#x751F;&#x7684;&#x65E5;&#x5FD7;&#x3002;
+kern          &#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x65E5;&#x5FD7;
+local0~local7 &#x81EA;&#x5B9A;&#x4E49;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;
+mail          &#x90AE;&#x4EF6;&#x65E5;&#x5FD7;
+user          &#x7528;&#x6237;&#x8FDB;&#x7A0B;
+</code></pre><blockquote>
+<p>Note: &#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; security&#xFF0C;&#x5E76;&#x4E14; mark&#x4EC5;&#x4F9B;&#x5185;&#x90E8;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x5E94;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;</p>
+</blockquote>
+<h3 id="&#x65E5;&#x5FD7;&#x7EA7;&#x522B;"><a name="&#x65E5;&#x5FD7;&#x7EA7;&#x522B;" class="plugin-anchor" href="#&#x65E5;&#x5FD7;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x7EA7;&#x522B;</h3>
+<pre><code>  &#x65E5;&#x5FD7;&#x7B49;&#x7EA7;       &#x8BF4;&#x660E;
+7 emerg          &#x7D27;&#x6025;&#x60C5;&#x51B5;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E0D;&#x53EF;&#x7528;&#xFF08;&#x4F8B;&#x5982;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#xFF09;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x901A;&#x77E5;&#x6240;&#x6709;&#x7528;&#x6237;&#x3002;
+6 alert          &#x9700;&#x8981;&#x7ACB;&#x5373;&#x4FEE;&#x590D;&#x7684;&#x544A;&#x8B66;&#x3002;
+5 crit           &#x5371;&#x9669;&#x60C5;&#x51B5;&#xFF0C;&#x4F8B;&#x5982;&#x786C;&#x76D8;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x788D;&#x7A0B;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#x529F;&#x80FD;&#x3002;
+4 error/err      &#x4E00;&#x822C;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x3002;
+3 warning/warn  &#x8B66;&#x544A;&#x3002;
+2 notice         &#x4E0D;&#x662F;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5904;&#x7406;&#x3002;
+1 info           &#x901A;&#x7528;&#x6027;&#x6D88;&#x606F;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x6765;&#x63D0;&#x4F9B;&#x6709;&#x7528;&#x4FE1;&#x606F;&#x3002;
+0 debug          &#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x4EA7;&#x751F;&#x7684;&#x4FE1;&#x606F;&#x3002;
+  none           &#x6CA1;&#x6709;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4E0D;&#x8BB0;&#x5F55;&#x4EFB;&#x4F55;&#x65E5;&#x5FD7;&#x6D88;&#x606F;&#x3002;
+</code></pre><p>&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#xFF0C;&#x7EA7;&#x522B;&#x4ECE;&#x4F4E;&#x5230;&#x9AD8;&#xFF0C;&#x8BB0;&#x5F55;&#x7684;&#x4FE1;&#x606F;&#x8D8A;&#x6765;&#x8D8A;&#x5C11;</p>
+<blockquote>
+<p>&#x8BE6;&#x7EC6;&#x7684;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x624B;&#x518C;: man 3 syslog</p>
+</blockquote>
+<h3 id="&#x8FDE;&#x63A5;&#x7B26;&#x53F7;"><a name="&#x8FDE;&#x63A5;&#x7B26;&#x53F7;" class="plugin-anchor" href="#&#x8FDE;&#x63A5;&#x7B26;&#x53F7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x63A5;&#x7B26;&#x53F7;</h3>
+<ul>
+<li>.xxx: &#x8868;&#x793A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;xxx&#x7EA7;&#x522B;&#x7684;&#x4FE1;&#x606F;</li>
+<li>.=xxx&#xFF1A;&#x8868;&#x793A;&#x7B49;&#x4E8E;xxx&#x7EA7;&#x522B;&#x7684;&#x4FE1;&#x606F;</li>
+<li>.!xxx&#xFF1A;&#x8868;&#x793A;&#x5728;xxx&#x4E4B;&#x5916;&#x7684;&#x7B49;&#x7EA7;&#x7684;&#x4FE1;&#x606F;</li>
+</ul>
+<h3 id="&#x52A8;&#x4F5C;"><a name="&#x52A8;&#x4F5C;" class="plugin-anchor" href="#&#x52A8;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A8;&#x4F5C;</h3>
+<ul>
+<li>&#x8BB0;&#x5F55;&#x5230;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x6216;&#x8BBE;&#x5907;&#x6587;&#x4EF6;:<pre><code>*.*     /var/log/file.log   # &#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+*.*     /dev/pts/0
+</code></pre><blockquote>
+<p>&#x6D4B;&#x8BD5;: logger -p local3.info &#x2018;KadeFor is testing the rsyslog and logger &#x2018;   logger &#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x4EA7;&#x751F;&#x65E5;&#x5FD7;</p>
+</blockquote>
+</li>
+<li>&#x8F6C;&#x53D1;&#x5230;&#x8FDC;&#x7A0B;:<pre><code>*.* @192.168.0.1            # &#x4F7F;&#x7528;UDP&#x534F;&#x8BAE;&#x8F6C;&#x53D1;&#x5230;192.168.0.1&#x7684;514(&#x9ED8;&#x8BA4;)&#x7AEF;&#x53E3;
+*.* @@192.168.0.1:10514     # &#x4F7F;&#x7528;TCP&#x534F;&#x8BAE;&#x8F6C;&#x53D1;&#x5230;192.168.0.1&#x7684;10514(&#x9ED8;&#x8BA4;)&#x7AEF;&#x53E3;
+&#x53D1;&#x9001;&#x7ED9;&#x7528;&#x6237;(&#x9700;&#x8981;&#x5728;&#x7EBF;&#x624D;&#x80FD;&#x6536;&#x5230;):
+*.*   root
+*.*   root,kadefor,up01     # &#x4F7F;&#x7528;,&#x53F7;&#x5206;&#x9694;&#x591A;&#x4E2A;&#x7528;&#x6237;
+*.*   *     # *&#x53F7;&#x8868;&#x793A;&#x6240;&#x6709;&#x5728;&#x7EBF;&#x7528;&#x6237;
+</code></pre></li>
+<li>&#x5FFD;&#x7565;&#x3001;&#x4E22;&#x5F03;<pre><code>local3.*   ~    # &#x5FFD;&#x7565;&#x6240;&#x6709;local3&#x7C7B;&#x578B;&#x7684;&#x6240;&#x6709;&#x7EA7;&#x522B;&#x7684;&#x65E5;&#x5FD7;
+</code></pre></li>
+<li><p>&#x6267;&#x884C;&#x811A;&#x672C;:</p>
+<pre><code>local3.*    ^/tmp/a.sh      # ^&#x53F7;&#x540E;&#x8DDF;&#x53EF;&#x6267;&#x884C;&#x811A;&#x672C;&#x6216;&#x7A0B;&#x5E8F;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+</code></pre><blockquote>
+<p>&#x65E5;&#x5FD7;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x811A;&#x672C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;.
+&#x53EF;&#x7528;&#x6765;&#x89E6;&#x53D1;&#x62A5;&#x8B66;</p>
+</blockquote>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x5B9E;&#x4F8B;</p>
+<pre><code># &#x8BB0;&#x5F55;mail&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x4E3A;error&#x53CA;&#x4EE5;&#x4E0A;&#x65E5;&#x5FD7;
+#&#x5982;&#x679C;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x524D;&#x6709; &#x201C;-&#x201D; &#x5219;&#x8868;&#x793A;&#x6BCF;&#x6B21;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x65F6;&#x4E0D;&#x540C;&#x6B65;&#xFF08;fsync&#xFF09;&#x6307;&#x5B9A;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x3002; &#x65E5;&#x5FD7;&#x5148;&#x4FDD;&#x5B58;&#x5230;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x56E0;&#x4E3A;&#x505C;&#x7535;&#x5BFC;&#x81F4;&#x65E5;&#x5FD7;&#x4E22;&#x5931;
+mail.err              -/var/log/mail_err.log
+# &#x8BB0;&#x5F55;mail&#x6240;&#x6709;&#x7B49;&#x7EA7;&#x4E3A;warn&#x7EA7;&#x522B;&#x7684;&#x65E5;&#x5FD7;&#xFF08;&#x4EC5;&#x8BB0;&#x5F55;warn&#x7EA7;&#x522B;&#xFF09;
+mail.=warn              /var/log/mail_err.log
+# &#x8BB0;&#x5F55;kern&#x6240;&#x6709;&#x65E5;&#x5FD7;
+kern.*                /var/log/kern.log
+# &#x5C06;mail&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x9664;&#x4E86;info&#x4EE5;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x90FD;&#x5199;&#x5165;/var/adm/mail
+mail.*;mail.!=info   /var/adm/mail
+# &#x5C06;&#x65E5;&#x5FD7;&#x7B49;&#x7EA7;&#x4E3A;crit&#x6216;&#x66F4;&#x9AD8;&#x7684;&#x5185;&#x6838;&#x6D88;&#x606F;&#x5B9A;&#x5411;&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;finlandia
+# &#x5982;&#x679C;&#x4E3B;&#x673A;&#x5D29;&#x6E83;&#xFF0C;&#x78C1;&#x76D8;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x4FEE;&#x590D;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x8BFB;&#x53D6;&#x5B58;&#x50A8;&#x7684;&#x6D88;&#x606F;&#x3002;&#x5982;&#x679C;&#x6709;&#x65E5;&#x5FD7;&#x5728;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x627E;&#x51FA;&#x5D29;&#x6E83;&#x7684;&#x539F;&#x56E0;&#x3002;
+kern.crit                @finlandia
+# &#x8BB0;&#x5F55;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;warning&#x7B49;&#x7EA7;&#x53CA;&#x4EE5;&#x4E0A;&#x65E5;&#x5FD7;
+*.warning             /var/log/syslog_warn.log
+# &#x8BB0;&#x5F55;mail&#x7684;warning&#x65E5;&#x5FD7;&#x548C;kern&#x7684;error&#x65E5;&#x5FD7;,&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7684;info&#x65E5;&#x5FD7;
+*.info;mail.warning;kern.error    /var/log/messages
+# &#x8BB0;&#x5F55;kernel&#x7684;info&#x5230;warning&#x65E5;&#x5FD7;
+kern.info;kern.!err   /var/adm/kernel-info
+# &#x5C06;mail&#x548C;news&#x7684;info&#x7EA7;&#x522B;&#x65E5;&#x5FD7;&#x5199;&#x5165;/var/adminfo
+mail,news.=info    /var/adm/info
+# &#x5C06;&#x6240;&#x6709;&#x7CFB;&#x7EDF;&#x4E2D;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;info&#x65E5;&#x5FD7;&#x548C;notice&#x65E5;&#x5FD7;&#x5B58;&#x5165;/var/log/massages,mail&#x7684;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#x9664;&#x5916;&#x3002;
+*.=info;*.=notice;\
+mail.none /var/log/messages
+# &#x7D27;&#x6025;&#x6D88;&#x606F;&#xFF08;emerg&#x7EA7;&#x522B;&#xFF09;&#x5C06;&#x4F7F;&#x7528;wall&#x663E;&#x793A;&#x7ED9;&#x5F53;&#x524D;&#x6240;&#x6709;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;
+*.=emerg      *
+# &#x8BE5;&#x89C4;&#x5219;&#x5C06;&#x6240;&#x6709;alert&#x4EE5;&#x53CA;&#x66F4;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x6D88;&#x606F;&#x5B9A;&#x5411;&#x5230;&#x64CD;&#x4F5C;&#x5458;&#x7684;&#x7EC8;&#x7AEF;&#xFF0C;&#x5373;&#x767B;&#x5F55;&#x7684;&#x7528;&#x6237;&#x201C;root&#x201D;&#x548C;&#x201C;joey&#x201D;&#x7684;&#x7EC8;&#x7AEF;&#x3002;
+*.alert      root,joey
+</code></pre></li>
+<li>&#x6CE8;&#x610F;&#x4E8B;&#x9879;<pre><code>1&#x3001;&#x628A;mail&#x7684;err&#x7EA7;&#x522B;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;syslog_err.log
+mail.crit,*.err         /var/log/syslog_err.log
+2&#x3001;mail.!warn            /var/log/mail.log
+&#x4E0A;&#x8FF0;&#x6848;&#x4F8B;,&#x611F;&#x53F9;&#x53F7;(&#x5C31;&#x662F;&#x5F62;&#x4F3C;&#x8FD9;&#x4E2A;&#x7684;&#x7B26;&#x53F7; ==&gt; !) &#x662F;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;,&#x5F97;&#x5148;&#x6709;&#x4E1C;&#x897F;&#xFF0C;&#x624D;&#x80FD;&#x8FC7;&#x53BB;
+mail.*;mail.!warn           /var/log/mail.log
+mail.*;mail.!warn           /var/log/mail.log
+</code></pre></li>
+</ul>
+<h1 id="&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><a name="&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</h1>
+<h2 id="&#x73AF;&#x5883;"><a name="&#x73AF;&#x5883;" class="plugin-anchor" href="#&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x73AF;&#x5883;</h2>
+<ul>
+<li>Server&#x7AEF;(op-admin01):172.21.0.12</li>
+<li>Client&#x7AEF;(op-admin02):172.21.0.14</li>
+</ul>
+<h2 id="&#x914D;&#x7F6E;"><a name="&#x914D;&#x7F6E;" class="plugin-anchor" href="#&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;</h2>
+<p>Server&#x7AEF;&#xFF1A;</p>
+<pre><code>$ vim /etc/rsyslog.conf
+$ModLoad imudp         ##&#x652F;&#x6301;UDP
+$UDPServerRun 514      ##&#x6307;&#x5B9A;UDP&#x7AEF;&#x53E3;
+$ModLoad imtcp         ##&#x652F;&#x6301;TCP
+$InputTCPServerRun 514 ##&#x6307;&#x5B9A;TCP&#x7AEF;&#x53E3;
+$WorkDirectory /var/lib/rsyslog
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+$IncludeConfig /etc/rsyslog.d/*.conf
+$OmitLocalLogging on
+$IMJournalStateFile imjournal.state
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+authpriv.*                                              /var/log/secure
+mail.*                                                  -/var/log/maillog
+cron.*                                                  /var/log/cron
+*.emerg                                                 :omusrmsg:*
+uucp,news.crit                                          /var/log/spooler
+local7.*                                                /var/log/boot.log
+
+$ systemctl restart rsyslog
+</code></pre><p>Client&#x7AEF;:</p>
+<pre><code>$ vim /etc/rsyslog.conf
+$WorkDirectory /var/lib/rsyslog
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+$IncludeConfig /etc/rsyslog.d/*.conf
+$OmitLocalLogging on
+$IMJournalStateFile imjournal.state
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+authpriv.*                                              /var/log/secure
+mail.*                                                  -/var/log/maillog
+cron.*                                                  /var/log/cron
+*.emerg                                                 :omusrmsg:*
+uucp,news.crit                                          /var/log/spooler
+local7.*                                                /var/log/boot.log
+*.* @172.21.0.12:514        ##&#xFF08;&#x5BF9;&#x5E94;udp&#x91C7;&#x96C6;&#xFF0C;ip&#x4E3A;server&#x7AEF;ip&#xFF09;
+*.* @@172.21.0.12:514       ##&#xFF08;&#x5BF9;&#x5E94;tcp&#x91C7;&#x96C6;&#xFF0C;ip&#x4E3A;server&#x7AEF;ip&#xFF09;
+
+$ systemctl restart rsyslog
+</code></pre><h2 id="&#x9A8C;&#x8BC1;"><a name="&#x9A8C;&#x8BC1;" class="plugin-anchor" href="#&#x9A8C;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9A8C;&#x8BC1;</h2>
+<p>Server&#x7AEF;&#xFF1A;</p>
+<pre><code>$ cd /var/log
+$ tail -f message
+</code></pre><p><img src="images/&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x7ED3;&#x679C;.jpg" alt="&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x7ED3;&#x679C;">
+op-admin02&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;,&#x5DF2;&#x7ECF;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; zhaojq 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
+2023-01-27 20:09:43
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="日志切割.html" class="navigation navigation-next navigation-unique" aria-label="Next page: logrotate">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"rsyslog","level":"1.10.1","depth":2,"next":{"title":"logrotate","level":"1.10.2","depth":2,"path":"日志管理/日志切割.md","ref":"日志管理/日志切割.md","articles":[]},"previous":{"title":"日志管理","level":"1.10","depth":1,"ref":"","articles":[{"title":"rsyslog","level":"1.10.1","depth":2,"path":"日志管理/系统日志管理.md","ref":"日志管理/系统日志管理.md","articles":[]},{"title":"logrotate","level":"1.10.2","depth":2,"path":"日志管理/日志切割.md","ref":"日志管理/日志切割.md","articles":[]},{"title":"ELK","level":"1.10.3","depth":2,"path":"日志管理/日志采集分析工具.md","ref":"日志管理/日志采集分析工具.md","articles":[{"title":"FileBeat","level":"1.10.3.1","depth":3,"path":"日志管理/ELK/FileBeat.md","ref":"日志管理/ELK/FileBeat.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","back-to-top-button","page-treeview","fontsettings","klipse","-lunr","-sharing","-search","search-pro","favicon","-highlight","livereload","pageview-count","code","auto-scroll-table","anchors","hide-element","advanced-emoji","tbfed-pagefooter","github","github-buttons","emphasize","splitter","-sharing","sharing-plus","sectionx","simple-page-toc","alerts","click-reveal","accordion","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © zhaojq 2019","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"emphasize":{},"github":{"url":"https://github.com/aldenygq"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"code":{"copyButtons":true},"hide-element":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"click-reveal":{},"sectionx":{},"anchor-navigation-ex":{"isShowTocTitleIcon":true},"favicon":{"shortcut":"","bookmark":""},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"aldenygq","repo":"leetcode","type":"star","size":"small","count":true}]},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"Alden","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"码农小杨","language":"zh-hans","links":{"sidebar":{"Home":"http://49.232.52.190:1313/about/"}},"gitbook":"3.2.3","sharing":{"qq":true,"all":["weibo","qq","qzone","douban","facebook","google","linkedin","twitter","whatsapp"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"description":"记录学习、工作期间学习到的知识，见证自己的成长😄"},"file":{"path":"日志管理/系统日志管理.md","mtime":"2023-01-27T12:09:43.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-27T12:14:06.832Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+
+    </body>
+</html>
+

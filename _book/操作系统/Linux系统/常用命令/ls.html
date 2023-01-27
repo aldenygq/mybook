@@ -1,0 +1,1984 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ls-列出文件列表 · 码农小杨</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Alden">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ack.html" />
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"aldenygq","repo":"leetcode","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://49.232.52.190:1313/about/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    关于我
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    操作系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    Linux系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    基础理论
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.1.1.</b>
+                    
+                    磁盘
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1.1" data-path="../基础理论/磁盘/零拷贝技术.html">
+            
+                <a href="../基础理论/磁盘/零拷贝技术.html">
+            
+                    
+                        <b>1.2.1.1.1.1.</b>
+                    
+                    零拷贝技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    基础服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.2.1" data-path="../基础服务/Systemd.html">
+            
+                <a href="../基础服务/Systemd.html">
+            
+                    
+                        <b>1.2.1.2.1.</b>
+                    
+                    Systemd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    常用命令
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.3.1" data-path="ls.html">
+            
+                <a href="ls.html">
+            
+                    
+                        <b>1.2.1.3.1.</b>
+                    
+                    ls-列出文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="ack.html">
+            
+                <a href="ack.html">
+            
+                    
+                        <b>1.2.1.3.2.</b>
+                    
+                    ack-全文检索
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    系统调优
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Kafka详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    Broker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" >
+            
+                <span>
+            
+                    
+                        <b>1.3.1.1.</b>
+                    
+                    安装部署
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="../../../Kafka详解/Broker/安装部署/基础环境.html">
+            
+                <a href="../../../Kafka详解/Broker/安装部署/基础环境.html">
+            
+                    
+                        <b>1.3.1.1.1.</b>
+                    
+                    基础环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2" data-path="../../../Kafka详解/Broker/安装部署/单机.html">
+            
+                <a href="../../../Kafka详解/Broker/安装部署/单机.html">
+            
+                    
+                        <b>1.3.1.1.2.</b>
+                    
+                    单机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.3" data-path="../../../Kafka详解/Broker/安装部署/集群.html">
+            
+                <a href="../../../Kafka详解/Broker/安装部署/集群.html">
+            
+                    
+                        <b>1.3.1.1.3.</b>
+                    
+                    集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../../Kafka详解/Broker/配置.html">
+            
+                <a href="../../../Kafka详解/Broker/配置.html">
+            
+                    
+                        <b>1.3.1.2.</b>
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="../../../Kafka详解/Broker/配置/基础参数.html">
+            
+                <a href="../../../Kafka详解/Broker/配置/基础参数.html">
+            
+                    
+                        <b>1.3.1.2.1.</b>
+                    
+                    基础参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="../../../Kafka详解/Broker/配置/性能调优.html">
+            
+                <a href="../../../Kafka详解/Broker/配置/性能调优.html">
+            
+                    
+                        <b>1.3.1.2.2.</b>
+                    
+                    性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    Nginx详解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../Nginx详解/基础理论.html">
+            
+                <a href="../../../Nginx详解/基础理论.html">
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    基础理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../Nginx详解/安装部署.html">
+            
+                <a href="../../../Nginx详解/安装部署.html">
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    安装部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../Nginx详解/安装部署/基础环境.html">
+            
+                <a href="../../../Nginx详解/安装部署/基础环境.html">
+            
+                    
+                        <b>1.4.2.1.</b>
+                    
+                    基础环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../../Nginx详解/安装部署/集群部署.html">
+            
+                <a href="../../../Nginx详解/安装部署/集群部署.html">
+            
+                    
+                        <b>1.4.2.2.</b>
+                    
+                    集群部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../Nginx详解/配置.html">
+            
+                <a href="../../../Nginx详解/配置.html">
+            
+                    
+                        <b>1.4.3.</b>
+                    
+                    配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../../Nginx详解/配置/基础参数.html">
+            
+                <a href="../../../Nginx详解/配置/基础参数.html">
+            
+                    
+                        <b>1.4.3.1.</b>
+                    
+                    基础参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../../../Nginx详解/配置/性能调优.html">
+            
+                <a href="../../../Nginx详解/配置/性能调优.html">
+            
+                    
+                        <b>1.4.3.2.</b>
+                    
+                    性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Golang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../Golang/基础理论.html">
+            
+                <a href="../../../Golang/基础理论.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    基础理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../Golang/环境配置.html">
+            
+                <a href="../../../Golang/环境配置.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    环境配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../Golang/基础语法.html">
+            
+                <a href="../../../Golang/基础语法.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../Golang/通用框架.html">
+            
+                <a href="../../../Golang/通用框架.html">
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    通用框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../Golang/Gin.html">
+            
+                <a href="../../../Golang/Gin.html">
+            
+                    
+                        <b>1.5.4.1.</b>
+                    
+                    Gin-web框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../../Golang/Cobra.html">
+            
+                <a href="../../../Golang/Cobra.html">
+            
+                    
+                        <b>1.5.4.2.</b>
+                    
+                    Cobra-CLI框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Gitbook
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../Gitbook/安装部署.html">
+            
+                <a href="../../../Gitbook/安装部署.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../Gitbook/插件配置.html">
+            
+                <a href="../../../Gitbook/插件配置.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    插件配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Cloud Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../Cloud Native/组件.html">
+            
+                <a href="../../../Cloud Native/组件.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../../Cloud Native/组件/Docker.html">
+            
+                <a href="../../../Cloud Native/组件/Docker.html">
+            
+                    
+                        <b>1.7.1.1.</b>
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../../../Cloud Native/组件/Kubernetes.html">
+            
+                <a href="../../../Cloud Native/组件/Kubernetes.html">
+            
+                    
+                        <b>1.7.1.2.</b>
+                    
+                    Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../Cloud Native/DevOps.html">
+            
+                <a href="../../../Cloud Native/DevOps.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    DevOps
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../../../Cloud Native/DevOps/Git.html">
+            
+                <a href="../../../Cloud Native/DevOps/Git.html">
+            
+                    
+                        <b>1.7.2.1.</b>
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../../../Cloud Native/DevOps/GitLab.html">
+            
+                <a href="../../../Cloud Native/DevOps/GitLab.html">
+            
+                    
+                        <b>1.7.2.2.</b>
+                    
+                    GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../../../Cloud Native/DevOps/Tekton.html">
+            
+                <a href="../../../Cloud Native/DevOps/Tekton.html">
+            
+                    
+                        <b>1.7.2.3.</b>
+                    
+                    Tekton
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../../../Cloud Native/DevOps/Argo.html">
+            
+                <a href="../../../Cloud Native/DevOps/Argo.html">
+            
+                    
+                        <b>1.7.2.4.</b>
+                    
+                    Argo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="../../../Cloud Native/DevOps/技术方案.html">
+            
+                <a href="../../../Cloud Native/DevOps/技术方案.html">
+            
+                    
+                        <b>1.7.2.5.</b>
+                    
+                    技术方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    SRE
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../SRE/稳定性.html">
+            
+                <a href="../../../SRE/稳定性.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    稳定性
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../../../SRE/稳定性/监控体系.html">
+            
+                <a href="../../../SRE/稳定性/监控体系.html">
+            
+                    
+                        <b>1.8.1.1.</b>
+                    
+                    监控体系
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1.1" data-path="../../../SRE/稳定性/监控体系/监控系统.html">
+            
+                <a href="../../../SRE/稳定性/监控体系/监控系统.html">
+            
+                    
+                        <b>1.8.1.1.1.</b>
+                    
+                    监控系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.1.2" data-path="../../../SRE/稳定性/监控体系/可观测性.html">
+            
+                <a href="../../../SRE/稳定性/监控体系/可观测性.html">
+            
+                    
+                        <b>1.8.1.1.2.</b>
+                    
+                    可观测性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.1.3" data-path="../../../SRE/稳定性/监控体系/链路追踪.html">
+            
+                <a href="../../../SRE/稳定性/监控体系/链路追踪.html">
+            
+                    
+                        <b>1.8.1.1.3.</b>
+                    
+                    链路追踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../../../SRE/稳定性/故障管理.html">
+            
+                <a href="../../../SRE/稳定性/故障管理.html">
+            
+                    
+                        <b>1.8.1.2.</b>
+                    
+                    故障管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.2.1" data-path="../../../SRE/稳定性/故障管理/预案管理.html">
+            
+                <a href="../../../SRE/稳定性/故障管理/预案管理.html">
+            
+                    
+                        <b>1.8.1.2.1.</b>
+                    
+                    预案管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2.2" data-path="../../../SRE/稳定性/故障管理/故障注入.html">
+            
+                <a href="../../../SRE/稳定性/故障管理/故障注入.html">
+            
+                    
+                        <b>1.8.1.2.2.</b>
+                    
+                    故障注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2.3" data-path="../../../SRE/稳定性/故障管理/故障记录.html">
+            
+                <a href="../../../SRE/稳定性/故障管理/故障记录.html">
+            
+                    
+                        <b>1.8.1.2.3.</b>
+                    
+                    故障记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../../../SRE/稳定性/容量管理.html">
+            
+                <a href="../../../SRE/稳定性/容量管理.html">
+            
+                    
+                        <b>1.8.1.3.</b>
+                    
+                    容量管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.3.1" data-path="../../../SRE/稳定性/容量管理/容量预估.html">
+            
+                <a href="../../../SRE/稳定性/容量管理/容量预估.html">
+            
+                    
+                        <b>1.8.1.3.1.</b>
+                    
+                    容量预估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3.2" data-path="../../../SRE/稳定性/容量管理/资源分配.html">
+            
+                <a href="../../../SRE/稳定性/容量管理/资源分配.html">
+            
+                    
+                        <b>1.8.1.3.2.</b>
+                    
+                    资源分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="../../../SRE/稳定性/变更管理.html">
+            
+                <a href="../../../SRE/稳定性/变更管理.html">
+            
+                    
+                        <b>1.8.1.4.</b>
+                    
+                    变更管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.4.1" data-path="../../../SRE/稳定性/变更管理/发布管理.html">
+            
+                <a href="../../../SRE/稳定性/变更管理/发布管理.html">
+            
+                    
+                        <b>1.8.1.4.1.</b>
+                    
+                    发布管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.2" data-path="../../../SRE/稳定性/变更管理/扩缩容.html">
+            
+                <a href="../../../SRE/稳定性/变更管理/扩缩容.html">
+            
+                    
+                        <b>1.8.1.4.2.</b>
+                    
+                    扩缩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.3" data-path="../../../SRE/稳定性/变更管理/迁移.html">
+            
+                <a href="../../../SRE/稳定性/变更管理/迁移.html">
+            
+                    
+                        <b>1.8.1.4.3.</b>
+                    
+                    迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4.4" data-path="../../../SRE/稳定性/巡检系统.html">
+            
+                <a href="../../../SRE/稳定性/巡检系统.html">
+            
+                    
+                        <b>1.8.1.4.4.</b>
+                    
+                    巡检系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../SRE/效率工程.html">
+            
+                <a href="../../../SRE/效率工程.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    效率工程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../../SRE/效率工程/流程引擎.html">
+            
+                <a href="../../../SRE/效率工程/流程引擎.html">
+            
+                    
+                        <b>1.8.2.1.</b>
+                    
+                    流程引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../../../SRE/效率工程/工单系统.html">
+            
+                <a href="../../../SRE/效率工程/工单系统.html">
+            
+                    
+                        <b>1.8.2.2.</b>
+                    
+                    工单系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../../../SRE/资源成本.html">
+            
+                <a href="../../../SRE/资源成本.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    资源成本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../../SRE/资源成本/预算管理.html">
+            
+                <a href="../../../SRE/资源成本/预算管理.html">
+            
+                    
+                        <b>1.8.3.1.</b>
+                    
+                    预算管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../../../SRE/资源成本/成本管理.html">
+            
+                <a href="../../../SRE/资源成本/成本管理.html">
+            
+                    
+                        <b>1.8.3.2.</b>
+                    
+                    成本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../../../SRE/资源成本/服务管理.html">
+            
+                <a href="../../../SRE/资源成本/服务管理.html">
+            
+                    
+                        <b>1.8.3.3.</b>
+                    
+                    服务管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../../../SRE/资源成本/CMDB.html">
+            
+                <a href="../../../SRE/资源成本/CMDB.html">
+            
+                    
+                        <b>1.8.3.4.</b>
+                    
+                    CMDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../../数据库/Mysql.html">
+            
+                <a href="../../../数据库/Mysql.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../../数据库/Redis.html">
+            
+                <a href="../../../数据库/Redis.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../../数据库/MongoDB.html">
+            
+                <a href="../../../数据库/MongoDB.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../../数据库/ES.html">
+            
+                <a href="../../../数据库/ES.html">
+            
+                    
+                        <b>1.9.4.</b>
+                    
+                    ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../../数据库/OceanBase.html">
+            
+                <a href="../../../数据库/OceanBase.html">
+            
+                    
+                        <b>1.9.5.</b>
+                    
+                    OceanBase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../../数据库/TiDB.html">
+            
+                <a href="../../../数据库/TiDB.html">
+            
+                    
+                        <b>1.9.6.</b>
+                    
+                    TiDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                        <b>1.10.</b>
+                    
+                    日志管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../../日志管理/系统日志管理.html">
+            
+                <a href="../../../日志管理/系统日志管理.html">
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    rsyslog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../../日志管理/日志切割.html">
+            
+                <a href="../../../日志管理/日志切割.html">
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    logrotate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../../日志管理/日志采集分析工具.html">
+            
+                <a href="../../../日志管理/日志采集分析工具.html">
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    ELK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../../../日志管理/ELK/FileBeat.html">
+            
+                <a href="../../../日志管理/ELK/FileBeat.html">
+            
+                    
+                        <b>1.10.3.1.</b>
+                    
+                    FileBeat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >ls-列出文件列表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</a><i></i></div></li>
+<li><div><a href="#&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</a><i></i></div></li>
+<li><div><a href="#&#x5E38;&#x89C1;&#x53C2;&#x6570;">&#x5E38;&#x89C1;&#x53C2;&#x6570;</a><i></i></div></li>
+<li><div><a href="#&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</a><i></i></div></li>
+</ul>
+</div>
+
+<h1 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h1>
+<p>&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#xFF08;Linux&#x4E2D;&#x4E00;&#x5207;&#x7686;&#x6587;&#x4EF6;&#xFF0C;&#x76EE;&#x5F55;&#x4E5F;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x79CD;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#xFF0C;&#x5355;&#x72EC;&#x8FD0;&#x884C;ls&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x4E3A;&#x5F53;&#x524D;&#x8DEF;&#x5F84;</p>
+<h1 id="&#x8BED;&#x6CD5;"><a name="&#x8BED;&#x6CD5;" class="plugin-anchor" href="#&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;</h1>
+<p>ls [-options] [target path]</p>
+<h1 id="&#x5E38;&#x89C1;&#x53C2;&#x6570;"><a name="&#x5E38;&#x89C1;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x5E38;&#x89C1;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x53C2;&#x6570;</h1>
+<ul>
+<li>-a&#xFF1A;&#x5217;&#x51FA;&#x76EE;&#x6807;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x542B;&#x9690;&#x85CF;&#x6587;&#x4EF6;</li>
+<li>-l&#xFF1A;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x62EC;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x6743;&#x9650;&#xFF0C;&#x6240;&#x5C5E;&#x7528;&#x6237;&#xFF0C;&#x6240;&#x5C5E;&#x7528;&#x6237;&#x7EC4;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x4E0A;&#x4E00;&#x6B21;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x7B49;</li>
+<li>-h&#xFF1A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;KBytes&#x4E3A;&#x5355;&#x4F4D;&#x663E;&#x793A;</li>
+<li>-S&#xFF1A;&#x6309;&#x7167;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x987A;&#x5E8F;&#x663E;&#x793A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#xFF1B;&#x82E5;&#x8981;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#xFF0C;&#x53EF;&#x4F7F;&#x7528;-Sr</li>
+</ul>
+<h1 id="&#x6848;&#x4F8B;"><a name="&#x6848;&#x4F8B;" class="plugin-anchor" href="#&#x6848;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6848;&#x4F8B;</h1>
+<p>1&#x3001;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;</p>
+<pre><code>$ ls -a
+.      book.json     Gitbook  Kafka&#x8BE6;&#x89E3;  node_modules  SUMMARY.md  &#x6570;&#x636E;&#x5E93;
+..     Cloud Native  Golang   logs       README.md     &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;
+_book  .git          images   Nginx&#x8BE6;&#x89E3;  SRE           &#x65E5;&#x5FD7;&#x7BA1;&#x7406;
+</code></pre><p>2&#x3001;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</p>
+<pre><code>$ ls -al
+&#x603B;&#x7528;&#x91CF; 88
+drwxr-xr-x   16 root root  4096 12&#x6708; 23 20:47 .
+dr-xr-x---.  13 root root  4096 12&#x6708; 23 20:40 ..
+drwxr-xr-x   15 root root  4096 12&#x6708; 23 20:40 _book
+-rw-r--r--    1 root root  2852 12&#x6708; 23 20:19 book.json
+drwxr-xr-x    4 root root  4096 12&#x6708; 23 17:36 Cloud Native
+drwxr-xr-x    7 root root  4096 12&#x6708; 23 18:18 .git
+drwxr-xr-x    3 root root  4096 12&#x6708; 23 20:21 Gitbook
+drwxr-xr-x    2 root root  4096 12&#x6708; 23 16:19 Golang
+drwxr-xr-x    2 root root  4096 12&#x6708; 23 20:24 images
+drwxr-xr-x    3 root root  4096 12&#x6708; 23 16:12 Kafka&#x8BE6;&#x89E3;
+drwxr-xr-x    2 root root  4096 12&#x6708; 23 18:16 logs
+drwxr-xr-x    4 root root  4096 12&#x6708; 23 16:16 Nginx&#x8BE6;&#x89E3;
+drwxr-xr-x  199 root root 12288 12&#x6708; 23 20:13 node_modules
+-rw-r--r--    1 root root   164 12&#x6708; 23 20:25 README.md
+drwxr-xr-x    5 root root  4096 12&#x6708; 23 18:00 SRE
+-rw-r--r--    1 root root  4333 12&#x6708; 23 20:40 SUMMARY.md
+drwxr-xr-x    3 root root  4096 12&#x6708; 23 20:35 &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;
+drwxr-xr-x    3 root root  4096 12&#x6708; 23 18:36 &#x65E5;&#x5FD7;&#x7BA1;&#x7406;
+drwxr-xr-x    2 root root  4096 12&#x6708; 23 17:40 &#x6570;&#x636E;&#x5E93;
+</code></pre><p>3&#x3001;&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;KBytes&#x4E3A;&#x5355;&#x4F4D;</p>
+<pre><code>$ ls -alh
+&#x603B;&#x7528;&#x91CF; 88K
+drwxr-xr-x   16 root root 4.0K 12&#x6708; 23 20:47 .
+dr-xr-x---.  13 root root 4.0K 12&#x6708; 23 20:40 ..
+drwxr-xr-x   15 root root 4.0K 12&#x6708; 23 20:40 _book
+-rw-r--r--    1 root root 2.8K 12&#x6708; 23 20:19 book.json
+drwxr-xr-x    4 root root 4.0K 12&#x6708; 23 17:36 Cloud Native
+drwxr-xr-x    7 root root 4.0K 12&#x6708; 23 18:18 .git
+drwxr-xr-x    3 root root 4.0K 12&#x6708; 23 20:21 Gitbook
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 23 16:19 Golang
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 23 20:24 images
+drwxr-xr-x    3 root root 4.0K 12&#x6708; 23 16:12 Kafka&#x8BE6;&#x89E3;
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 23 18:16 logs
+drwxr-xr-x    4 root root 4.0K 12&#x6708; 23 16:16 Nginx&#x8BE6;&#x89E3;
+drwxr-xr-x  199 root root  12K 12&#x6708; 23 20:13 node_modules
+-rw-r--r--    1 root root  164 12&#x6708; 23 20:25 README.md
+drwxr-xr-x    5 root root 4.0K 12&#x6708; 23 18:00 SRE
+-rw-r--r--    1 root root 4.3K 12&#x6708; 23 20:40 SUMMARY.md
+drwxr-xr-x    3 root root 4.0K 12&#x6708; 23 20:35 &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;
+drwxr-xr-x    3 root root 4.0K 12&#x6708; 23 18:36 &#x65E5;&#x5FD7;&#x7BA1;&#x7406;
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 23 17:40 &#x6570;&#x636E;&#x5E93;
+</code></pre><p>4&#x3001;&#x5217;&#x51FA;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;KBytes&#x4E3A;&#x5355;&#x4F4D;</p>
+<pre><code>$ ls -alh /
+&#x603B;&#x7528;&#x91CF; 76K
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:53 .
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:53 ..
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 bin -&gt; usr/bin
+dr-xr-xr-x.   5 root root 4.0K 4&#x6708;  15 2022 boot
+drwxr-xr-x    2 root root 4.0K 11&#x6708;  5 2019 data
+drwxr-xr-x   19 root root 3.0K 12&#x6708; 22 21:02 dev
+drwxr-xr-x.  88 root root 4.0K 12&#x6708; 23 10:13 etc
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 home
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 lib -&gt; usr/lib
+lrwxrwxrwx.   1 root root    9 3&#x6708;   7 2019 lib64 -&gt; usr/lib64
+drwx------.   2 root root  16K 3&#x6708;   7 2019 lost+found
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 media
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 mnt
+drwxr-xr-x.   3 root root 4.0K 3&#x6708;   7 2019 opt
+dr-xr-xr-x  108 root root    0 12&#x6708; 22 21:02 proc
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 22 23:10 quick-start
+dr-xr-x---.  13 root root 4.0K 12&#x6708; 23 20:40 root
+drwxr-xr-x   28 root root  980 12&#x6708; 23 10:13 run
+lrwxrwxrwx.   1 root root    8 3&#x6708;   7 2019 sbin -&gt; usr/sbin
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 srv
+dr-xr-xr-x   13 root root    0 12&#x6708; 22 21:02 sys
+drwxrwxrwt.  39 root root 4.0K 12&#x6708; 23 20:47 tmp
+drwxr-xr-x.  13 root root 4.0K 3&#x6708;   7 2019 usr
+drwxr-xr-x.  19 root root 4.0K 3&#x6708;   7 2019 var
+</code></pre><p>5&#x3001;&#x5217;&#x51FA;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;KBytes&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x5E76;&#x4E14;&#x6309;&#x7167;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;</p>
+<pre><code>$ ls -alhS /
+&#x603B;&#x7528;&#x91CF; 76K
+drwx------.   2 root root  16K 3&#x6708;   7 2019 lost+found
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:55 .
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:55 ..
+dr-xr-xr-x.   5 root root 4.0K 4&#x6708;  15 2022 boot
+drwxr-xr-x    2 root root 4.0K 11&#x6708;  5 2019 data
+drwxr-xr-x.  88 root root 4.0K 12&#x6708; 23 10:13 etc
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 home
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 media
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 mnt
+drwxr-xr-x.   3 root root 4.0K 3&#x6708;   7 2019 opt
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 22 23:10 quick-start
+dr-xr-x---.  13 root root 4.0K 12&#x6708; 23 20:40 root
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 srv
+drwxrwxrwt.  39 root root 4.0K 12&#x6708; 23 20:47 tmp
+drwxr-xr-x.  13 root root 4.0K 3&#x6708;   7 2019 usr
+drwxr-xr-x.  19 root root 4.0K 3&#x6708;   7 2019 var
+drwxr-xr-x   19 root root 3.0K 12&#x6708; 22 21:02 dev
+drwxr-xr-x   28 root root  980 12&#x6708; 23 10:13 run
+lrwxrwxrwx.   1 root root    9 3&#x6708;   7 2019 lib64 -&gt; usr/lib64
+lrwxrwxrwx.   1 root root    8 3&#x6708;   7 2019 sbin -&gt; usr/sbin
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 bin -&gt; usr/bin
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 lib -&gt; usr/lib
+dr-xr-xr-x  108 root root    0 12&#x6708; 22 21:02 proc
+dr-xr-xr-x   13 root root    0 12&#x6708; 23 20:54 sys
+</code></pre><p>6&#x3001;&#x5217;&#x51FA;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;KBytes&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x5E76;&#x4E14;&#x6309;&#x7167;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x5012;&#x5E8F;&#x663E;&#x793A;</p>
+<pre><code>$ ls -alhSr /
+&#x603B;&#x7528;&#x91CF; 76K
+dr-xr-xr-x   13 root root    0 12&#x6708; 23 20:54 sys
+dr-xr-xr-x  107 root root    0 12&#x6708; 22 21:02 proc
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 lib -&gt; usr/lib
+lrwxrwxrwx.   1 root root    7 3&#x6708;   7 2019 bin -&gt; usr/bin
+lrwxrwxrwx.   1 root root    8 3&#x6708;   7 2019 sbin -&gt; usr/sbin
+lrwxrwxrwx.   1 root root    9 3&#x6708;   7 2019 lib64 -&gt; usr/lib64
+drwxr-xr-x   28 root root  980 12&#x6708; 23 10:13 run
+drwxr-xr-x   19 root root 3.0K 12&#x6708; 22 21:02 dev
+drwxr-xr-x.  19 root root 4.0K 3&#x6708;   7 2019 var
+drwxr-xr-x.  13 root root 4.0K 3&#x6708;   7 2019 usr
+drwxrwxrwt.  39 root root 4.0K 12&#x6708; 23 20:47 tmp
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 srv
+dr-xr-x---.  13 root root 4.0K 12&#x6708; 23 20:40 root
+drwxr-xr-x    2 root root 4.0K 12&#x6708; 22 23:10 quick-start
+drwxr-xr-x.   3 root root 4.0K 3&#x6708;   7 2019 opt
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 mnt
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 media
+drwxr-xr-x.   2 root root 4.0K 4&#x6708;  11 2018 home
+drwxr-xr-x.  88 root root 4.0K 12&#x6708; 23 10:13 etc
+drwxr-xr-x    2 root root 4.0K 11&#x6708;  5 2019 data
+dr-xr-xr-x.   5 root root 4.0K 4&#x6708;  15 2022 boot
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:56 ..
+dr-xr-xr-x.  20 root root 4.0K 12&#x6708; 23 20:56 .
+drwx------.   2 root root  16K 3&#x6708;   7 2019 lost+found
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; zhaojq 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x672C;&#x4E66;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF1A;
+2023-01-27 20:09:43
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="ack.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ack-全文检索">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ls-列出文件列表","level":"1.2.1.3.1","depth":4,"next":{"title":"ack-全文检索","level":"1.2.1.3.2","depth":4,"path":"操作系统/Linux系统/常用命令/ack.md","ref":"操作系统/Linux系统/常用命令/ack.md","articles":[]},"previous":{"title":"常用命令","level":"1.2.1.3","depth":3,"ref":"","articles":[{"title":"ls-列出文件列表","level":"1.2.1.3.1","depth":4,"path":"操作系统/Linux系统/常用命令/ls.md","ref":"操作系统/Linux系统/常用命令/ls.md","articles":[]},{"title":"ack-全文检索","level":"1.2.1.3.2","depth":4,"path":"操作系统/Linux系统/常用命令/ack.md","ref":"操作系统/Linux系统/常用命令/ack.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","back-to-top-button","page-treeview","fontsettings","klipse","-lunr","-sharing","-search","search-pro","favicon","-highlight","livereload","pageview-count","code","auto-scroll-table","anchors","hide-element","advanced-emoji","tbfed-pagefooter","github","github-buttons","emphasize","splitter","-sharing","sharing-plus","sectionx","simple-page-toc","alerts","click-reveal","accordion","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © zhaojq 2019","modify_label":"本书发布时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"emphasize":{},"github":{"url":"https://github.com/aldenygq"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"code":{"copyButtons":true},"hide-element":{},"fontsettings":{"family":"sans","size":2,"theme":"white"},"click-reveal":{},"sectionx":{},"anchor-navigation-ex":{"isShowTocTitleIcon":true},"favicon":{"shortcut":"","bookmark":""},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"aldenygq","repo":"leetcode","type":"star","size":"small","count":true}]},"klipse":{"myConfigKey":"it's the default value"},"advanced-emoji":{"embedEmojis":false},"sharing":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"Alden","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"码农小杨","language":"zh-hans","links":{"sidebar":{"Home":"http://49.232.52.190:1313/about/"}},"gitbook":"3.2.3","sharing":{"qq":true,"all":["weibo","qq","qzone","douban","facebook","google","linkedin","twitter","whatsapp"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"description":"记录学习、工作期间学习到的知识，见证自己的成长😄"},"file":{"path":"操作系统/Linux系统/常用命令/ls.md","mtime":"2023-01-27T12:09:43.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-27T12:14:06.832Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+
+    </body>
+</html>
+
